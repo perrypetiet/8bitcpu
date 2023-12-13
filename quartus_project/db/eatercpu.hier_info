@@ -1,0 +1,5 @@
+|eatercpu
+input => output.DATAIN
+output << input.DB_MAX_OUTPUT_PORT_TYPE
+
+
