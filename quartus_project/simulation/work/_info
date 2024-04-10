@@ -1,0 +1,88 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Ereg
+Z0 w1712774645
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/simulation
+Z4 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
+Z5 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
+l0
+L4
+VM`J:Gb8VG?O36Y4C3jEk^3
+!s100 C;gE19:2ALgm<;Mabe=zC3
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1712780199
+!i10b 1
+Z8 !s108 1712780199.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
+Z10 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Adescription
+R1
+R2
+DEx4 work 3 reg 0 22 M`J:Gb8VG?O36Y4C3jEk^3
+l18
+L14
+VamcI4TO^L2AELh2c3Y2;d2
+!s100 3h>J^94kzEVQ7zokVFDNc0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eregtest
+Z13 w1712780178
+R1
+R2
+R3
+Z14 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
+Z15 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
+l0
+L5
+Vk99X=n;TY>F_UgnBZ>Rl21
+!s100 DjP<kf:R3b[4e>kQ1VVYX0
+R6
+32
+Z16 !s110 1712780202
+!i10b 1
+Z17 !s108 1712780202.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
+Z19 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
+!i113 1
+R11
+R12
+Atb
+R1
+R2
+Z20 DEx4 work 7 regtest 0 22 k99X=n;TY>F_UgnBZ>Rl21
+l28
+L9
+V^:UF8XK42jX[EX>Nm_SP:2
+!s100 KOnM6znL<dm]:mjFlY?DJ0
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
