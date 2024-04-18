@@ -21,9 +21,9 @@ VzKNJU78hfgRhIeIb3aXMG0
 !s100 VQn8[QAC@>5le4>?k=gOR0
 Z6 OV;C;10.5b;63
 32
-Z7 !s110 1713302519
+Z7 !s110 1713475177
 !i10b 1
-Z8 !s108 1713302519.000000
+Z8 !s108 1713475177.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/multipleregtest.vhd|
 Z10 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/multipleregtest.vhd|
 !i113 1
@@ -61,11 +61,11 @@ VCe`idLUCYYkOEAQI;U4OE2
 !s100 k>VPX?YTRRPdej9KYg0WK1
 R6
 32
-Z17 !s110 1713302520
+R7
 !i10b 1
-Z18 !s108 1713302520.000000
-Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd|
-Z20 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd|
+R8
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd|
+Z18 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd|
 !i113 1
 R11
 R12
@@ -73,28 +73,28 @@ Adescription
 R14
 R1
 R2
-Z21 DEx4 work 2 pc 0 22 Ce`idLUCYYkOEAQI;U4OE2
+DEx4 work 2 pc 0 22 Ce`idLUCYYkOEAQI;U4OE2
 l21
 L17
-Z22 V<d5CbL_@PmVT1QI@:63U51
-Z23 !s100 938iIcT4R^2ooL6n1^L_21
+V<d5CbL_@PmVT1QI@:63U51
+!s100 938iIcT4R^2ooL6n1^L_21
 R6
 32
-R17
+R7
 !i10b 1
+R8
+R17
 R18
-R19
-R20
 !i113 1
 R11
 R12
 Epctest
-Z24 w1713302505
+Z19 w1713302602
 R1
 R2
 R3
-Z25 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd
-Z26 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd
+Z20 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd
+Z21 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd
 l0
 L5
 VYERze:=;SU2FHV=^LbdFz1
@@ -104,8 +104,8 @@ R6
 R7
 !i10b 1
 R8
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd|
-Z28 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd|
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd|
+Z23 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd|
 !i113 1
 R11
 R12
@@ -115,25 +115,105 @@ R2
 DEx4 work 6 pctest 0 22 YERze:=;SU2FHV=^LbdFz1
 l32
 L9
-VX[VMX[<[<5@XNL3=V:iLL2
-!s100 R[5cW[=3CGzfIga;fEfRj1
+VJHcS?k>W>ze`:3FcR3Oh40
+!s100 KeK`HJRTPSNi0SS7[CK6i0
 R6
 32
 R7
 !i10b 1
 R8
-R27
+R22
+R23
+!i113 1
+R11
+R12
+Eramip
+Z24 w1713474779
+Z25 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
+R1
+R2
+R3
+Z26 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd
+Z27 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd
+l0
+L43
+V>eUa_^?5aIH@@QO5PB9T]1
+!s100 ]i26bOY8JU?0=k:YkdL3N0
+R6
+32
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd|
+Z29 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd|
+!i113 1
+R11
+R12
+Asyn
+R25
+R1
+R2
+DEx4 work 5 ramip 0 22 >eUa_^?5aIH@@QO5PB9T]1
+l59
+L55
+VWVeRf00Y[mY[ALP4FBkTf3
+!s100 C1M9Nmg39XfffP?I9NzW00
+R6
+32
+R7
+!i10b 1
+R8
 R28
+R29
+!i113 1
+R11
+R12
+Eramiptest
+Z30 w1713472765
+R1
+R2
+R3
+Z31 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd
+Z32 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd
+l0
+L5
+VT7ZlPzm5hl:9kdbI8OXC53
+!s100 P6Y4_24>:UX7HgVoo;zSF1
+R6
+32
+R7
+!i10b 1
+R8
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd|
+Z34 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd|
+!i113 1
+R11
+R12
+Atb
+R1
+R2
+Z35 DEx4 work 9 ramiptest 0 22 T7ZlPzm5hl:9kdbI8OXC53
+l27
+L9
+Z36 VN=N:H?o:fS?nIjkFeECE53
+Z37 !s100 aF7fzQcEcknln2A_DQ0k80
+R6
+32
+R7
+!i10b 1
+R8
+R33
+R34
 !i113 1
 R11
 R12
 Ereg
-Z29 w1713295691
+Z38 w1713295691
 R1
 R2
 R3
-Z30 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
-Z31 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
+Z39 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
+Z40 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd
 l0
 L4
 VH9zaCX@oVjS0m3l=Em_9C1
@@ -143,8 +223,8 @@ R6
 R7
 !i10b 1
 R8
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
-Z33 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
+Z42 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/reg.vhd|
 !i113 1
 R11
 R12
@@ -161,18 +241,18 @@ R6
 R7
 !i10b 1
 R8
-R32
-R33
+R41
+R42
 !i113 1
 R11
 R12
 Eregtest
-Z34 w1712784876
+Z43 w1712784876
 R1
 R2
 R3
-Z35 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
-Z36 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
+Z44 8C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
+Z45 FC:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
 l0
 L5
 Vk99X=n;TY>F_UgnBZ>Rl21
@@ -182,8 +262,8 @@ R6
 R7
 !i10b 1
 R8
-Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
-Z38 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
+Z47 !s107 C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd|
 !i113 1
 R11
 R12
@@ -200,8 +280,8 @@ R6
 R7
 !i10b 1
 R8
-R37
-R38
+R46
+R47
 !i113 1
 R11
 R12

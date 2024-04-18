@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue Apr 16 23:13:11 2024
+Fitter Status : Successful - Thu Apr 18 23:23:14 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : embedsystems
-Top-level Entity Name : reg
+Top-level Entity Name : ramip
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 8 / 22,320 ( < 1 % )
+Total logic elements : 0 / 22,320 ( 0 % )
     Total combinational functions : 0 / 22,320 ( 0 % )
-    Dedicated logic registers : 8 / 22,320 ( < 1 % )
-Total registers : 8
-Total pins : 28 / 154 ( 18 % )
+    Dedicated logic registers : 0 / 22,320 ( 0 % )
+Total registers : 0
+Total pins : 26 / 154 ( 17 % )
 Total virtual pins : 0
-Total memory bits : 0 / 608,256 ( 0 % )
+Total memory bits : 2,048 / 608,256 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
