@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity pc is
+port(
+  clk:     in std_logic;
+  ld:      in std_logic;
+  clr:     in std_logic;
+  oute:    in std_logic;
+  count:   in std_logic;
+  val_out: out std_logic_vector(7 downto 0);
+  bus_out: out std_logic_vector(7 downto 0);
+  val_in:  in std_logic_vector(7 downto 0));
+end pc;
+
+architecture description of pc is
+
+signal val: std_logic_vector(7 downto 0) := "00000000";
+
+begin
+
+  process (clk, clr, ld, count) is
+  begin
+  
+  	if rising_edge(clk) then
+      if count = '1' then
+   	  	val <= std_logic_vector( unsigned(val) + 1 );
+      end if;
+      if ld = '1' then
+   	    val <= val_in;
+      end if;
+    end if;
+  
+    if clr = '1' then
+  	  val <= "00000000";
+    end if;
+  
+  end process;
+
+  val_out <= val;
+  bus_out <= val when (oute = '1') else "ZZZZZZZZ";
+  
+end description;

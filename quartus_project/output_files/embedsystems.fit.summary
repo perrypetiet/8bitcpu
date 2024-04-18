@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Apr 10 21:34:28 2024
+Fitter Status : Successful - Tue Apr 16 23:13:11 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : embedsystems
 Top-level Entity Name : reg
@@ -9,7 +9,7 @@ Total logic elements : 8 / 22,320 ( < 1 % )
     Total combinational functions : 0 / 22,320 ( 0 % )
     Dedicated logic registers : 8 / 22,320 ( < 1 % )
 Total registers : 8
-Total pins : 20 / 154 ( 13 % )
+Total pins : 28 / 154 ( 18 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )

@@ -36,7 +36,7 @@ begin
 	clock <= '0';
    load <= '0';
 	clear <= '0';
-   output <= '0';
+   output <= '1';
   	regin <= "00000001";
 	wait for 1 ns;
 	-- Set the load to 1 to indicate we want to load register on next clock
