@@ -1,0 +1,37 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity flreg is
+port(
+	clock:  in std_logic;
+	clr:    in std_logic;
+	cfin:   in std_logic;
+	zfin:   in std_logic;
+	cfout:  out std_logic;
+	zfout:  out std_logic;
+end flreg;
+
+architecture description of flreg is
+
+signal regval: std_logic_vector(1 downto 0) := "00";
+
+begin
+  
+  process (clk, clr) is
+  begin
+  	if rising_edge(clk) then
+   	  if ld = '0' then
+      	regval <= d_in;
+      end if;  
+    end if;
+    if clr = '1' then
+      regval <= "00";
+    end if;
+  end process;
+   	
+  
+  bus_out <= regval when (oute = '0') else "ZZZZZZZZ";
+  d_out <= regval;
+  
+  
+end description;

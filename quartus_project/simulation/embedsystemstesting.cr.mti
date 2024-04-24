@@ -1,4 +1,12 @@
-C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd
+C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/flagsreg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/flagsreg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flagsreg
+-- Compiling architecture description of flagsreg
+
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -50,6 +58,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity microcountertest
 -- Compiling architecture tb of microcountertest
 
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/flagsregtest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/flagsregtest.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity flagsregtest
+-- Compiling architecture tb of flagsregtest
+
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -84,6 +100,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ramip
 -- Compiling architecture SYN of ramip
 
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity microcounter
+-- Compiling architecture description of microcounter
+
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/alutest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/alutest.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -99,14 +124,5 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity multipleregtest
 -- Compiling architecture tb of multipleregtest
-
-} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity microcounter
--- Compiling architecture description of microcounter
 
 } {} {}}

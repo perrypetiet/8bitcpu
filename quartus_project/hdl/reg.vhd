@@ -21,7 +21,7 @@ begin
   process (clk, ld, clr) is
   begin
   	if rising_edge(clk) then
-   	  if ld = '0' then
+   	  if ld = '1' then
       	regval <= d_in;
       end if;  
     end if;
@@ -31,7 +31,7 @@ begin
   end process;
    	
   
-  bus_out <= regval when (oute = '0') else "ZZZZZZZZ";
+  bus_out <= regval when (oute = '1') else "ZZZZZZZZ";
   d_out <= regval;
   
   
