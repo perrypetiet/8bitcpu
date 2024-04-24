@@ -79,7 +79,7 @@ signal databus  : std_logic_vector(7 downto 0);
 begin
 
 	 -- CONNECT COMPONENTS TO BUS AND CONTROL SIGNALS
-	 ram: progmem port map(clock, reset, ramo, ramw, mald, databus, databus, databus);
+	 --ram: progmem port map(clock, reset, ramo, ramw, mald, databus, databus, databus);
     
     process
     begin
