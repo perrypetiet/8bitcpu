@@ -1,5 +1,5 @@
 Analysis & Synthesis report for embedsystems
-Thu Apr 18 23:23:09 2024
+Fri Apr 19 22:24:38 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -16,7 +16,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. General Register Statistics
- 11. Source assignments for altsyncram:altsyncram_component|altsyncram_mks3:auto_generated
+ 11. Source assignments for altsyncram:altsyncram_component|altsyncram_q4s3:auto_generated
  12. Parameter Settings for User Entity Instance: altsyncram:altsyncram_component
  13. altsyncram Parameter Settings by Entity Instance
  14. Post-Synthesis Netlist Statistics for Top Partition
@@ -48,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 18 23:23:09 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 19 22:24:38 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; embedsystems                                   ;
 ; Top-level Entity Name              ; ramip                                          ;
@@ -167,24 +167,23 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                          ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                                             ; Library ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
-; hdl/ramip.vhd                    ; yes             ; User Wizard-Generated File            ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd          ;         ;
-; simulation/meminit.hex           ; yes             ; User Hexadecimal (Intel-Format) File  ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/simulation/meminit.hex ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                 ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
-; altrom.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
-; altram.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                     ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
-; db/altsyncram_mks3.tdf           ; yes             ; Auto-Generated Megafunction           ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_mks3.tdf ;         ;
-+----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
+; hdl/ramip.vhd                    ; yes             ; User Wizard-Generated File   ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc                                 ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                     ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
+; db/altsyncram_q4s3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_q4s3.tdf ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -226,18 +225,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+-----------------+--------------+
 ; |ramip                                 ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 26   ; 0            ; |ramip                                                                ; ramip           ; work         ;
 ;    |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ramip|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;       |altsyncram_mks3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ramip|altsyncram:altsyncram_component|altsyncram_mks3:auto_generated ; altsyncram_mks3 ; work         ;
+;       |altsyncram_q4s3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ramip|altsyncram:altsyncram_component|altsyncram_q4s3:auto_generated ; altsyncram_q4s3 ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                             ;
-+---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------+
-; Name                                                                      ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                      ;
-+---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------+
-; altsyncram:altsyncram_component|altsyncram_mks3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; ./simulation/meminit.hex ;
-+---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                         ;
++---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                      ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; altsyncram:altsyncram_component|altsyncram_q4s3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; None ;
++---------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -265,7 +264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +---------------------------------------------------------------------------------------+
-; Source assignments for altsyncram:altsyncram_component|altsyncram_mks3:auto_generated ;
+; Source assignments for altsyncram:altsyncram_component|altsyncram_q4s3:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------+
 ; Assignment                      ; Value              ; From ; To                      ;
 +---------------------------------+--------------------+------+-------------------------+
@@ -273,64 +272,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------+--------------------+------+-------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: altsyncram:altsyncram_component   ;
-+------------------------------------+--------------------------+----------------+
-; Parameter Name                     ; Value                    ; Type           ;
-+------------------------------------+--------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                        ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                       ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                      ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                       ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                      ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                        ; Untyped        ;
-; OPERATION_MODE                     ; SINGLE_PORT              ; Untyped        ;
-; WIDTH_A                            ; 8                        ; Signed Integer ;
-; WIDTHAD_A                          ; 8                        ; Signed Integer ;
-; NUMWORDS_A                         ; 256                      ; Signed Integer ;
-; OUTDATA_REG_A                      ; CLOCK0                   ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                     ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                     ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                     ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                     ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                     ; Untyped        ;
-; WIDTH_B                            ; 1                        ; Signed Integer ;
-; WIDTHAD_B                          ; 1                        ; Signed Integer ;
-; NUMWORDS_B                         ; 0                        ; Signed Integer ;
-; INDATA_REG_B                       ; CLOCK1                   ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                   ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                   ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                   ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED             ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                   ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                     ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                     ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                     ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                     ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                     ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                     ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                        ; Signed Integer ;
-; WIDTH_BYTEENA_B                    ; 1                        ; Signed Integer ;
-; RAM_BLOCK_TYPE                     ; AUTO                     ; Untyped        ;
-; BYTE_SIZE                          ; 8                        ; Signed Integer ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ     ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ     ; Untyped        ;
-; INIT_FILE                          ; ./simulation/meminit.hex ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                   ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                        ; Signed Integer ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                   ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                   ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN          ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN          ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                    ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                    ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                        ; Signed Integer ;
-; DEVICE_FAMILY                      ; Cyclone IV E             ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_mks3          ; Untyped        ;
-+------------------------------------+--------------------------+----------------+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------+
+; Parameter Name                     ; Value                ; Type             ;
++------------------------------------+----------------------+------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped          ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped          ;
+; WIDTH_A                            ; 8                    ; Signed Integer   ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer   ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped          ;
+; WIDTH_B                            ; 1                    ; Signed Integer   ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer   ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped          ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped          ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer   ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped          ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped          ;
+; INIT_FILE                          ; meminit.hex          ; Untyped          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped          ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped          ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer   ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped          ;
+; CBXI_PARAMETER                     ; altsyncram_q4s3      ; Untyped          ;
++------------------------------------+----------------------+------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -344,7 +343,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                     ;
 ;     -- WIDTH_A                            ; 8                               ;
 ;     -- NUMWORDS_A                         ; 256                             ;
-;     -- OUTDATA_REG_A                      ; CLOCK0                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                    ;
 ;     -- WIDTH_B                            ; 1                               ;
 ;     -- NUMWORDS_B                         ; 0                               ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                          ;
@@ -382,7 +381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Apr 18 23:23:00 2024
+    Info: Processing started: Fri Apr 19 22:24:28 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off embedsystems -c embedsystems
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -401,12 +400,24 @@ Info (12021): Found 2 design units, including 1 entities, in source file hdl/pc.
 Info (12021): Found 2 design units, including 1 entities, in source file testbenches/pctest.vhd
     Info (12022): Found design unit 1: pctest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd Line: 9
     Info (12023): Found entity 1: pctest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/pctest.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file hdl/ramip.vhd
-    Info (12022): Found design unit 1: ramip-SYN File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 55
-    Info (12023): Found entity 1: ramip File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file testbenches/ramiptest.vhd
     Info (12022): Found design unit 1: ramiptest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd Line: 9
     Info (12023): Found entity 1: ramiptest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/ramiptest.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/ramip.vhd
+    Info (12022): Found design unit 1: ramip-SYN File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 55
+    Info (12023): Found entity 1: ramip File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/progmem.vhd
+    Info (12022): Found design unit 1: progmem-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd Line: 18
+    Info (12023): Found entity 1: progmem File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbenches/progmemtest.vhd
+    Info (12022): Found design unit 1: progmemtest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/progmemtest.vhd Line: 9
+    Info (12023): Found entity 1: progmemtest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/progmemtest.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbenches/microcountertest.vhd
+    Info (12022): Found design unit 1: microcountertest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd Line: 9
+    Info (12023): Found entity 1: microcountertest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/microcounter.vhd
+    Info (12022): Found design unit 1: microcounter-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 14
+    Info (12023): Found entity 1: microcounter File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 5
 Info (12127): Elaborating entity "ramip" for the top level hierarchy
 Info (12128): Elaborating entity "altsyncram" for hierarchy "altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
@@ -431,7 +442,7 @@ Info (12133): Instantiated megafunction "altsyncram:altsyncram_component" with t
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "./simulation/meminit.hex"
+    Info (12134): Parameter "init_file" = "meminit.hex"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "256"
@@ -439,7 +450,7 @@ Info (12133): Instantiated megafunction "altsyncram:altsyncram_component" with t
     Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
     Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
     Info (12134): Parameter "power_up_uninitialized" = "FALSE"
     Info (12134): Parameter "ram_block_type" = "AUTO"
@@ -461,19 +472,20 @@ Info (12133): Instantiated megafunction "altsyncram:altsyncram_component" with t
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mks3.tdf
-    Info (12023): Found entity 1: altsyncram_mks3 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_mks3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_mks3" for hierarchy "altsyncram:altsyncram_component|altsyncram_mks3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q4s3.tdf
+    Info (12023): Found entity 1: altsyncram_q4s3 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_q4s3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_q4s3" for hierarchy "altsyncram:altsyncram_component|altsyncram_q4s3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127002): Can't read Memory Initialization File or Hexadecimal (Intel-Format) File meminit.hex -- setting all initial values to 0 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 34 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 8 output pins
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4808 megabytes
-    Info: Processing ended: Thu Apr 18 23:23:09 2024
-    Info: Elapsed time: 00:00:09
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Fri Apr 19 22:24:38 2024
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:22
 
 
