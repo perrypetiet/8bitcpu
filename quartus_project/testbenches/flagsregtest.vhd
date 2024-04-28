@@ -12,6 +12,7 @@ component flagsreg is
 port(
 	clock:  in std_logic;
 	clr:    in std_logic;
+	load:   in std_logic;
 	cfin:   in std_logic;
 	zfin:   in std_logic;
 	cfout:  out std_logic;
@@ -20,6 +21,7 @@ end component;
 
 signal clk:   std_logic := '0';
 signal clear: std_logic := '0';
+signal fl:    std_logic := '1';
 signal cfin:  std_logic := '0';
 signal zfin:  std_logic := '0';
 signal carryout: std_logic;
@@ -27,8 +29,7 @@ signal zeroout: std_logic;
 
 begin
 
-	-- Connect two registers together
-	DUT: flagsreg port map(clk, clear, cfin, zfin, carryout, zeroout);
+	DUT: flagsreg port map(clk, clear, fl, cfin, zfin, carryout, zeroout);
  
 	process
 	begin

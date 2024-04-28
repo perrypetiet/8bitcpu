@@ -5,6 +5,7 @@ entity flagsreg is
 port(
 	clock:  in std_logic;
 	clr:    in std_logic;
+	load:   in std_logic;
 	cfin:   in std_logic;
 	zfin:   in std_logic;
 	cfout:  out std_logic;
@@ -21,8 +22,10 @@ begin
   process (clock, clr) is
   begin
     if rising_edge(clock) then
-		carry <= cfin;
-		zero <= zfin;
+	   if load = '1' then
+		  carry <= cfin;
+		  zero <= zfin;
+		end if;
     end if;
     if clr = '1' then
 		carry <= '0';

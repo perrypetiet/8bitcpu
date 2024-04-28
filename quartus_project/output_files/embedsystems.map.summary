@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Wed Apr 24 22:11:16 2024
+Analysis & Synthesis Status : Successful - Sun Apr 28 15:48:43 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : embedsystems
-Top-level Entity Name : ramip
+Top-level Entity Name : eatercpu
 Family : Cyclone IV E
 Total logic elements : 0
     Total combinational functions : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 26
+Total pins : 10
 Total virtual pins : 0
-Total memory bits : 2,048
+Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

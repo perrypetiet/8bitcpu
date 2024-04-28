@@ -46,15 +46,10 @@ port(
 end component;
 
 
-
-
-
-
-
-
-
 signal clock    : std_logic := '0';
 signal clear    : std_logic := '0';
+signal fld      : std_logic := '0';
+signal orld     : std_logic := '0';
 signal oea      : std_logic := '0';
 signal loada    : std_logic := '0';
 signal oeb      : std_logic := '0';
