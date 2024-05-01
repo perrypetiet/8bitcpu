@@ -2,7 +2,48 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "cpu_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "cpu_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_in",
+					"strict" : false
+				},
+				{
+					"name" : "clear_in",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

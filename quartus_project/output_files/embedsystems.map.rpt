@@ -1,5 +1,5 @@
 Analysis & Synthesis report for embedsystems
-Sun Apr 28 15:48:43 2024
+Wed May  1 01:12:48 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,25 +13,23 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
  12. Source assignments for progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated
  13. Parameter Settings for User Entity Instance: progmem:memory|ramip:memory|altsyncram:altsyncram_component
  14. altsyncram Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "microcounter:mc"
- 16. Port Connectivity Checks: "flagsreg:flags_register"
- 17. Port Connectivity Checks: "alu:logic_unit"
- 18. Port Connectivity Checks: "reg:b_register"
- 19. Port Connectivity Checks: "reg:a_register"
- 20. Port Connectivity Checks: "reg:output_register"
- 21. Port Connectivity Checks: "reg:instruction_register"
- 22. Port Connectivity Checks: "progmem:memory"
- 23. Port Connectivity Checks: "pc:program_counter"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 15. Port Connectivity Checks: "flagsreg:flags_register"
+ 16. Port Connectivity Checks: "alu:logic_unit"
+ 17. Port Connectivity Checks: "reg:b_register"
+ 18. Port Connectivity Checks: "reg:output_register"
+ 19. Port Connectivity Checks: "reg:instruction_register"
+ 20. Port Connectivity Checks: "progmem:memory"
+ 21. Port Connectivity Checks: "pc:program_counter"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -58,18 +56,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 28 15:48:43 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed May  1 01:12:48 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; embedsystems                                   ;
 ; Top-level Entity Name              ; eatercpu                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 0                                              ;
-;     Total combinational functions  ; 0                                              ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
+; Total logic elements               ; 127                                            ;
+;     Total combinational functions  ; 107                                            ;
+;     Dedicated logic registers      ; 44                                             ;
+; Total registers                    ; 44                                             ;
 ; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
+; Total memory bits                  ; 128                                            ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
 ; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
@@ -170,10 +168,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -204,45 +203,67 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-;                                             ;          ;
-; Total combinational functions               ; 0        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 0        ;
-;     -- 3 input functions                    ; 0        ;
-;     -- <=2 input functions                  ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 0        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 10       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; clock_in ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 10       ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 127            ;
+;                                             ;                ;
+; Total combinational functions               ; 107            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 44             ;
+;     -- 3 input functions                    ; 44             ;
+;     -- <=2 input functions                  ; 19             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 86             ;
+;     -- arithmetic mode                      ; 21             ;
+;                                             ;                ;
+; Total registers                             ; 44             ;
+;     -- Dedicated logic registers            ; 44             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 10             ;
+; Total memory bits                           ; 128            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clock_in~input ;
+; Maximum fan-out                             ; 45             ;
+; Total fan-out                               ; 588            ;
+; Average fan-out                             ; 3.28           ;
++---------------------------------------------+----------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |eatercpu                  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu           ; eatercpu    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |eatercpu                                    ; 107 (68)            ; 44 (0)                    ; 128         ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu                                                                                            ; eatercpu        ; work         ;
+;    |alu:logic_unit|                          ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit                                                                             ; alu             ; work         ;
+;    |microcounter:mc|                         ; 8 (8)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|microcounter:mc                                                                            ; microcounter    ; work         ;
+;    |pc:program_counter|                      ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|pc:program_counter                                                                         ; pc              ; work         ;
+;    |progmem:memory|                          ; 1 (1)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory                                                                             ; progmem         ; work         ;
+;       |ramip:memory|                         ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory                                                                ; ramip           ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;             |altsyncram_59s3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated ; altsyncram_59s3 ; work         ;
+;    |reg:a_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:a_register                                                                             ; reg             ; work         ;
+;    |reg:b_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:b_register                                                                             ; reg             ; work         ;
+;    |reg:instruction_register|                ; 4 (4)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:instruction_register                                                                   ; reg             ; work         ;
+;    |reg:output_register|                     ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:output_register                                                                        ; reg             ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                               ;
++-------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; Name                                                                                                  ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF            ;
++-------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
+; progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; ../meminit.hex ;
++-------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -254,57 +275,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; reg:b_register|regval[0..7]            ; Stuck at GND due to stuck port clock_enable ;
-; reg:a_register|regval[0..7]            ; Stuck at GND due to stuck port clock_enable ;
-; reg:output_register|regval[0..7]       ; Stuck at GND due to stuck port clock_enable ;
-; reg:instruction_register|regval[0..7]  ; Stuck at GND due to stuck port clock_enable ;
-; pc:program_counter|pc_val[0..7]        ; Lost fanout                                 ;
-; Total Number of Removed Registers = 40 ;                                             ;
-+----------------------------------------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                        ;
-+--------------------------+--------------------------------+----------------------------------------+
-; Register name            ; Reason for Removal             ; Registers Removed due to This Register ;
-+--------------------------+--------------------------------+----------------------------------------+
-; reg:b_register|regval[7] ; Stuck at GND                   ; pc:program_counter|pc_val[7]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[6] ; Stuck at GND                   ; pc:program_counter|pc_val[6]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[5] ; Stuck at GND                   ; pc:program_counter|pc_val[5]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[4] ; Stuck at GND                   ; pc:program_counter|pc_val[4]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[3] ; Stuck at GND                   ; pc:program_counter|pc_val[3]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[2] ; Stuck at GND                   ; pc:program_counter|pc_val[2]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[1] ; Stuck at GND                   ; pc:program_counter|pc_val[1]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-; reg:b_register|regval[0] ; Stuck at GND                   ; pc:program_counter|pc_val[0]           ;
-;                          ; due to stuck port clock_enable ;                                        ;
-+--------------------------+--------------------------------+----------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 44    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 44    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[0] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |eatercpu|Mux7                         ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |eatercpu|data_bus[4]                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -397,22 +391,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "microcounter:mc"                                                                      ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; clr2   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "flagsreg:flags_register"                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
-; load  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; cfout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; zfout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -423,8 +406,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
-; aluo    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; alus    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; val_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -434,41 +415,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+------------------+
 ; Port ; Type  ; Severity ; Details          ;
 +------+-------+----------+------------------+
-; ld   ; Input ; Info     ; Stuck at GND     ;
 ; oute ; Input ; Info     ; Stuck at GND     ;
 +------+-------+----------+------------------+
 
 
-+--------------------------------------------+
-; Port Connectivity Checks: "reg:a_register" ;
-+------+-------+----------+------------------+
-; Port ; Type  ; Severity ; Details          ;
-+------+-------+----------+------------------+
-; ld   ; Input ; Info     ; Stuck at GND     ;
-; oute ; Input ; Info     ; Stuck at GND     ;
-+------+-------+----------+------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "reg:output_register" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; oute ; Input ; Info     ; Stuck at GND          ;
++------+-------+----------+-----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg:output_register"                                                                   ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; ld      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; oute    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; bus_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg:instruction_register"                                                            ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; ld    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; oute  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; d_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg:instruction_register"                                                                  ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; d_out[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------+
@@ -476,9 +442,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+--------------+
 ; Port         ; Type  ; Severity ; Details      ;
 +--------------+-------+----------+--------------+
-; memout       ; Input ; Info     ; Stuck at GND ;
 ; memwrite     ; Input ; Info     ; Stuck at GND ;
-; addrload     ; Input ; Info     ; Stuck at GND ;
 ; addrin[7..4] ; Input ; Info     ; Stuck at GND ;
 +--------------+-------+----------+--------------+
 
@@ -488,9 +452,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port    ; Type   ; Severity ; Details                                                                             ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
-; ld      ; Input  ; Info     ; Stuck at GND                                                                        ;
-; oute    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; count   ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; val_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -501,12 +462,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_ff         ; 44                          ;
+;     CLR               ; 8                           ;
+;     ENA CLR           ; 28                          ;
+;     ENA CLR SLD       ; 8                           ;
+; cycloneiii_lcell_comb ; 107                         ;
+;     arith             ; 21                          ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 14                          ;
+;     normal            ; 86                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 44                          ;
+; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -525,7 +497,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sun Apr 28 15:48:21 2024
+    Info: Processing started: Wed May  1 01:12:37 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off embedsystems -c embedsystems
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -580,33 +552,14 @@ Info (12021): Found 2 design units, including 1 entities, in source file testben
 Info (12021): Found 2 design units, including 1 entities, in source file hdl/eatercpu.vhd
     Info (12022): Found design unit 1: eatercpu-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 12
     Info (12023): Found entity 1: eatercpu File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file hdl/ramip2.vhd
-    Info (12022): Found design unit 1: ramip2-SYN File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip2.vhd Line: 55
-    Info (12023): Found entity 1: ramip2 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip2.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file testbenches/eatercputest.vhd
+    Info (12022): Found design unit 1: eatercputest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/eatercputest.vhd Line: 9
+    Info (12023): Found entity 1: eatercputest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/eatercputest.vhd Line: 5
 Info (12127): Elaborating entity "eatercpu" for the top level hierarchy
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(94): used explicit default value for signal "fld" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 94
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(95): used explicit default value for signal "orld" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 95
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(96): used explicit default value for signal "oea" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 96
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(97): used explicit default value for signal "loada" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 97
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(98): used explicit default value for signal "oeb" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 98
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(99): used explicit default value for signal "loadb" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 99
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(100): used explicit default value for signal "aluout" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 100
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(101): used explicit default value for signal "alusub" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 101
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(102): used explicit default value for signal "pcld" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 102
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(103): used explicit default value for signal "pco" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 103
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(104): used explicit default value for signal "pcc" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 104
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(105): used explicit default value for signal "mald" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 105
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(106): used explicit default value for signal "ramo" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 106
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(107): used explicit default value for signal "ramw" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 107
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(108): used explicit default value for signal "iro" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 108
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(109): used explicit default value for signal "irld" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 109
-Warning (10540): VHDL Signal Declaration warning at eatercpu.vhd(110): used explicit default value for signal "mcc" because signal was never assigned a value File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 110
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(119): object "zflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 119
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(120): object "cflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 120
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(121): object "mcout" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 121
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(123): object "ir_logic_in" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 123
-Info (12128): Elaborating entity "pc" for hierarchy "pc:program_counter" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 128
-Info (12128): Elaborating entity "progmem" for hierarchy "progmem:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 129
+Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(122): object "zflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 122
+Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(123): object "cflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 123
+Info (12128): Elaborating entity "pc" for hierarchy "pc:program_counter" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 143
+Info (12128): Elaborating entity "progmem" for hierarchy "progmem:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 144
 Info (12128): Elaborating entity "ramip" for hierarchy "progmem:memory|ramip:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd Line: 36
 Info (12128): Elaborating entity "altsyncram" for hierarchy "progmem:memory|ramip:memory|altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "progmem:memory|ramip:memory|altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
@@ -664,43 +617,41 @@ Info (12133): Instantiated megafunction "progmem:memory|ramip:memory|altsyncram:
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_59s3.tdf
     Info (12023): Found entity 1: altsyncram_59s3 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_59s3" for hierarchy "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "reg" for hierarchy "reg:instruction_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 130
-Info (12128): Elaborating entity "alu" for hierarchy "alu:logic_unit" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 134
-Info (12128): Elaborating entity "flagsreg" for hierarchy "flagsreg:flags_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 135
-Info (12128): Elaborating entity "microcounter" for hierarchy "microcounter:mc" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 136
-Warning (10036): Verilog HDL or VHDL warning at microcounter.vhd(17): object "clear" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 17
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[0]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 37
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[1]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 61
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[2]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 85
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[3]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 109
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[4]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 133
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[5]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 157
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[6]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 181
-        Warning (14320): Synthesized away node "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|q_a[7]" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 205
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "cpu_out[0]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[1]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[2]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[3]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[4]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[5]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[6]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-    Warning (13410): Pin "cpu_out[7]" is stuck at GND File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 9
-Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (12128): Elaborating entity "reg" for hierarchy "reg:instruction_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 145
+Info (12128): Elaborating entity "alu" for hierarchy "alu:logic_unit" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 149
+Info (12128): Elaborating entity "flagsreg" for hierarchy "flagsreg:flags_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 150
+Info (12128): Elaborating entity "microcounter" for hierarchy "microcounter:mc" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 151
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Mux57 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 171
+    Warning (19017): Found clock multiplexer Mux49 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 239
+    Warning (19017): Found clock multiplexer Mux39 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 224
+    Warning (19017): Found clock multiplexer Mux32 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 215
+    Warning (19017): Found clock multiplexer Mux23 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 205
+    Warning (19017): Found clock multiplexer Mux15 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 194
+    Warning (19017): Found clock multiplexer Mux7 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 183
+    Warning (19017): Found clock multiplexer Mux1 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 174
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "data_bus[7]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[6]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[5]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[4]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[3]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[2]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[1]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[0]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+Info (286030): Timing-Driven Synthesis is running
+Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|ALTSYNCRAM" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clock_in" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 7
-    Warning (15610): No output dependent on input pin "clear_in" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 8
-Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 153 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 8 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4796 megabytes
-    Info: Processing ended: Sun Apr 28 15:48:43 2024
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:53
+    Info (21061): Implemented 135 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4804 megabytes
+    Info: Processing ended: Wed May  1 01:12:48 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
 
 

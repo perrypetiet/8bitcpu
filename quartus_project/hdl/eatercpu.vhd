@@ -60,7 +60,7 @@ end component;
 
 component flagsreg is
 port(
-  clock:  in std_logic;
+  clk:  in std_logic;
   clr:    in std_logic;
   load:   in std_logic;
   cfin:   in std_logic;
@@ -82,32 +82,35 @@ end component;
 -- the clock input from the buttons is actually the inverted clock
 -- and the regular clock needs to be inverted. This is also done
 -- for the clear signal
-signal clock:      std_logic := '0';
-signal clock_inv:  std_logic := '1';
-signal clear:      std_logic := '0';
+signal clock:      std_logic;
+signal clock_inv:  std_logic;
+signal clear:      std_logic;
 
 -- Data bus
-signal data_bus: std_logic_vector(7 downto 0) := "ZZZZZZZZ";
+signal data_bus: std_logic_vector(7 downto 0);
 signal mar_in  : std_logic_vector(7 downto 0);
 
 -- Control signals
-signal fld      : std_logic := '0';
-signal orld     : std_logic := '0';
-signal oea      : std_logic := '0';
-signal loada    : std_logic := '0';
-signal oeb      : std_logic := '0';
-signal loadb    : std_logic := '0';
-signal aluout   : std_logic := '0';
-signal alusub   : std_logic := '0';
-signal pcld     : std_logic := '0';
-signal pco      : std_logic := '0';
-signal pcc      : std_logic := '0';
-signal mald     : std_logic := '0';
-signal ramo     : std_logic := '0';
-signal ramw     : std_logic := '0';
-signal iro      : std_logic := '0';
-signal irld     : std_logic := '0';
-signal mcc      : std_logic := '0';
+signal fld      : std_logic;
+signal orld     : std_logic;
+
+signal orout    : std_logic; --??
+
+signal oea      : std_logic;
+signal loada    : std_logic;
+signal oeb      : std_logic;
+signal loadb    : std_logic;
+signal aluout   : std_logic;
+signal alusub   : std_logic;
+signal pcld     : std_logic;
+signal pco      : std_logic;
+signal pcc      : std_logic;
+signal mald     : std_logic;
+signal ramo     : std_logic;
+signal ramw     : std_logic;
+signal iro      : std_logic;
+signal irld     : std_logic;
+signal mcc      : std_logic;
 
 -- alu inputs and outputs
 signal zflag_in: std_logic;
@@ -120,22 +123,12 @@ signal zflag_out: std_logic;
 signal cflag_out: std_logic;
 signal mcout    : std_logic_vector(3 downto 0);
 signal ir_out   : std_logic_vector(7 downto 0);
-signal ir_logic_in: std_logic_vector(3 downto 0); 
 
+signal orval : std_logic_vector(7 downto 0);
 
 begin
+  
 
-  program_counter     : pc port map(clock, pcld, clear, pco, pcc, open, data_bus, data_bus);
-  memory              : progmem port map(clock, clear, ramo, ramw, mald, mar_in, data_bus, data_bus);
-  instruction_register: reg port map(irld, clock, clear, iro, ir_out, data_bus, data_bus);
-  output_register     : reg port map(orld, clock, clear, '0', cpu_out, open, data_bus);
-  a_register          : reg port map(loada, clock, clear, oea, alu_in1, data_bus, data_bus);
-  b_register          : reg port map(loadb, clock, clear, oeb, alu_in2, data_bus, data_bus);
-  logic_unit          : alu port map(aluout, alusub, cflag_in, zflag_in, alu_in1, alu_in2, open, data_bus);
-  flags_register      : flagsreg port map(clock, clear, fld, cflag_in, zflag_in, cflag_out, zflag_out);
-  mc                  : microcounter port map(clock_inv, clear, mcc, mcout);
-  
-  
   -- clock signals
   clock_inv <= clock_in;
   clock     <= not clock_in;
@@ -146,47 +139,115 @@ begin
   -- only 4 bits for memory addressing.
   mar_in(7 downto 4) <= "0000";
   mar_in(3 downto 0) <= data_bus(3 downto 0);
-  ir_logic_in <= ir_out(7 downto 4);
+  
+  program_counter     : pc port map(clock, pcld, clear, pco, pcc, open, data_bus, data_bus);
+  memory              : progmem port map(clock, clear, ramo, ramw, mald, mar_in, data_bus, data_bus);
+  instruction_register: reg port map(irld, clock, clear, iro, ir_out, data_bus, data_bus);
+  output_register     : reg port map(orld, clock, clear, orout, cpu_out, data_bus, data_bus);
+  a_register          : reg port map(loada, clock, clear, oea, alu_in1, data_bus, data_bus);
+  b_register          : reg port map(loadb, clock, clear, oeb, alu_in2, data_bus, data_bus);
+  logic_unit          : alu port map(aluout, alusub, cflag_in, zflag_in, alu_in1, alu_in2, open, data_bus);
+  flags_register      : flagsreg port map(clock, clear, fld, cflag_in, zflag_in, cflag_out, zflag_out);
+  mc                  : microcounter port map(clock_inv, clear, mcc, mcout);
+  
   
   -- The three signals for the logic decoding are::
   -- mcout, ir_logic_in and zflag/cflag out.
-  
-  process (clock_inv, clear) is
-	 if rising_edge(clear) then
-		-- clear sets all signals to 0
-		fld <= '0';    orld <= '0';
-		oea <= '0';    loada <= '0';
-		oeb <= '0';    loadb <= '0';
-		aluout <= '0'; alusub <= '0';
-		pcld <= '0';   pco <= '0';
-      pcc <= '0';    mald <= '0';
-		ramo <= '0';   ramw <= '0';
-		iro <= '0';    irld <= '0';
-		mcc <= '0';
-	 end if;
-	 -- On rising edge of the inverted clock the microcounter gets incremented
-	 -- and we need to update the control signals.
-    if rising_edge(clock_inv) then
-	   -- set all signals to 0
-	   fld <= '0';    orld <= '0';
-		oea <= '0';    loada <= '0';
-		oeb <= '0';    loadb <= '0';
-		aluout <= '0'; alusub <= '0';
-		pcld <= '0';   pco <= '0';
-      pcc <= '0';    mald <= '0';
-		ramo <= '0';   ramw <= '0';
-		iro <= '0';    irld <= '0';
-		mcc <= '0';
-		
-		-- Then we set correct signals based on logic input
-		if ir_logic_in = "0000" then -- NOOP instruction
-			
-		end if;
-		
-		
-	 end if;
+  process (ir_out, mcout, zflag_out, cflag_out) is 
+  begin
+	 
+	 
+	 -- set all signals to 0
+	 fld <= '0';    orld <= '0'; orout <= '0';
+    oea <= '0';    loada <= '0';
+	 oeb <= '0';    loadb <= '0';
+	 aluout <= '0'; alusub <= '0';
+	 pcld <= '0';   pco <= '0';
+    pcc <= '0';    mald <= '0';
+	 ramo <= '0';   ramw <= '0';
+	 iro <= '0';    irld <= '0';
+  	 mcc <= '0';
+	 
+	 case	ir_out(7 downto 4) is
+	 
+	   when "0000" => -- NOOP 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0001" => -- lda 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => iro <= '1'; mald <= '1';
+			 when "0100" => ramo <= '1'; loada <= '1';
+			 when "0101" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0010" => -- ldb 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => iro <= '1'; mald <= '1';
+			 when "0100" => ramo <= '1'; loadb <= '1';
+			 when "0101" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0011" => -- add 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => aluout <= '1'; fld <= '1'; loada <= '1';
+			 when "0100" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0100" => -- jmp 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => iro <= '1'; pcld <= '1';
+			 when "0011" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0101" => -- sub 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => alusub <= '1'; aluout <= '1'; fld <= '1'; loada <= '1';
+			 when "0100" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "0110" => -- jmpz 
+		  case mcout is
+			 when others => null;
+		  end case;
+		  
+		  when "0111" => -- orlda 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => oea <= '1'; orld <= '1';
+			 when "0100" => mcc <= '1';
+			 when others => null;
+		  end case;
+		  
+	   when others => null;
+	 end case;	
+	 
+	
   end process;
-  
- 
-  
 end description;

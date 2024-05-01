@@ -6,7 +6,7 @@ clock_in => reg:instruction_register.clk
 clock_in => reg:output_register.clk
 clock_in => reg:a_register.clk
 clock_in => reg:b_register.clk
-clock_in => flagsreg:flags_register.clock
+clock_in => flagsreg:flags_register.clk
 clear_in => pc:program_counter.clr
 clear_in => progmem:memory.clr
 clear_in => reg:instruction_register.clr
@@ -615,8 +615,8 @@ bus_out[7] <= bus_out[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |eatercpu|flagsreg:flags_register
-clock => zero.CLK
-clock => carry.CLK
+clk => zero.CLK
+clk => carry.CLK
 clr => zero.ACLR
 clr => carry.ACLR
 load => carry.ENA

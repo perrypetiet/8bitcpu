@@ -14,12 +14,10 @@ end microcounter;
 architecture description of microcounter is
 
 signal counter_val:   std_logic_vector(3 downto 0) := "0000";
-signal clear:         std_logic := '0';
 
 begin
 
     output <= counter_val;
-	 clear  <= clr1 and clr2;
 
     process (clk,clr1,clr2) is
     begin

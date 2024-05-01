@@ -64,6 +64,7 @@ BEGIN
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
 		init_file => "../meminit.hex",
+		--init_file => "meminit.hex",
 		intended_device_family => "Cyclone IV E",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
