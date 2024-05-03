@@ -1,14 +1,14 @@
-Fitter Status : Successful - Wed May  1 01:12:54 2024
+Fitter Status : Successful - Fri May  3 21:21:15 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : embedsystems
 Top-level Entity Name : eatercpu
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 114 / 22,320 ( < 1 % )
-    Total combinational functions : 107 / 22,320 ( < 1 % )
-    Dedicated logic registers : 44 / 22,320 ( < 1 % )
-Total registers : 44
+Total logic elements : 118 / 22,320 ( < 1 % )
+    Total combinational functions : 114 / 22,320 ( < 1 % )
+    Dedicated logic registers : 64 / 22,320 ( < 1 % )
+Total registers : 64
 Total pins : 10 / 154 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 128 / 608,256 ( < 1 % )

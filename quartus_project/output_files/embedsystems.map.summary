@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Wed May  1 01:12:48 2024
+Analysis & Synthesis Status : Successful - Fri May  3 21:21:09 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : embedsystems
 Top-level Entity Name : eatercpu
 Family : Cyclone IV E
-Total logic elements : 127
-    Total combinational functions : 107
-    Dedicated logic registers : 44
-Total registers : 44
+Total logic elements : 137
+    Total combinational functions : 114
+    Dedicated logic registers : 64
+Total registers : 64
 Total pins : 10
 Total virtual pins : 0
 Total memory bits : 128

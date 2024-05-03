@@ -85,7 +85,12 @@ set_location_assignment PIN_B13 -to cpu_out[2]
 set_location_assignment PIN_A13 -to cpu_out[1]
 set_location_assignment PIN_A15 -to cpu_out[0]
 set_location_assignment PIN_E1 -to clear_in
-set_location_assignment PIN_J15 -to clock_in
+set_location_assignment PIN_R8 -to clock_in
+set_global_assignment -name VHDL_FILE hdl/outtest.vhd
+set_global_assignment -name VHDL_FILE hdl/outtestwrapper.vhd
+set_global_assignment -name VHDL_FILE hdl/outreg.vhd
+set_global_assignment -name VHDL_FILE hdl/clockdiv.vhd
+set_global_assignment -name VHDL_FILE testbenches/clockdivtest.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

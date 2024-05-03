@@ -1,5 +1,5 @@
 Analysis & Synthesis report for embedsystems
-Wed May  1 01:12:48 2024
+Fri May  3 21:21:09 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -15,21 +15,22 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated
- 13. Parameter Settings for User Entity Instance: progmem:memory|ramip:memory|altsyncram:altsyncram_component
- 14. altsyncram Parameter Settings by Entity Instance
- 15. Port Connectivity Checks: "flagsreg:flags_register"
- 16. Port Connectivity Checks: "alu:logic_unit"
- 17. Port Connectivity Checks: "reg:b_register"
- 18. Port Connectivity Checks: "reg:output_register"
- 19. Port Connectivity Checks: "reg:instruction_register"
- 20. Port Connectivity Checks: "progmem:memory"
- 21. Port Connectivity Checks: "pc:program_counter"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated
+ 14. Parameter Settings for User Entity Instance: progmem:memory|ramip:memory|altsyncram:altsyncram_component
+ 15. Parameter Settings for Inferred Entity Instance: alu:logic_unit|lpm_add_sub:Add1
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "flagsreg:flags_register"
+ 18. Port Connectivity Checks: "alu:logic_unit"
+ 19. Port Connectivity Checks: "reg:b_register"
+ 20. Port Connectivity Checks: "reg:instruction_register"
+ 21. Port Connectivity Checks: "progmem:memory"
+ 22. Port Connectivity Checks: "pc:program_counter"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -56,15 +57,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May  1 01:12:48 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri May  3 21:21:09 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; embedsystems                                   ;
 ; Top-level Entity Name              ; eatercpu                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 127                                            ;
-;     Total combinational functions  ; 107                                            ;
-;     Dedicated logic registers      ; 44                                             ;
-; Total registers                    ; 44                                             ;
+; Total logic elements               ; 137                                            ;
+;     Total combinational functions  ; 114                                            ;
+;     Dedicated logic registers      ; 64                                             ;
+; Total registers                    ; 64                                             ;
 ; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 128                                            ;
@@ -172,7 +173,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -190,6 +192,8 @@ https://fpgasoftware.intel.com/eula.
 ; hdl/alu.vhd                      ; yes             ; User VHDL File                        ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/alu.vhd            ;         ;
 ; hdl/flagsreg.vhd                 ; yes             ; User VHDL File                        ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/flagsreg.vhd       ;         ;
 ; hdl/eatercpu.vhd                 ; yes             ; User VHDL File                        ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd       ;         ;
+; hdl/outreg.vhd                   ; yes             ; User VHDL File                        ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outreg.vhd         ;         ;
+; hdl/clockdiv.vhd                 ; yes             ; User VHDL File                        ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/clockdiv.vhd       ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
@@ -200,40 +204,47 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                       ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altram.inc                                     ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
 ; db/altsyncram_59s3.tdf           ; yes             ; Auto-Generated Megafunction           ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf                                ;         ;
+; addcore.inc                      ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/addcore.inc                                    ;         ;
+; look_add.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/look_add.inc                                   ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc                                   ;         ;
+; altshift.inc                     ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc                                   ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                          ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                        ;         ;
+; db/add_sub_dui.tdf               ; yes             ; Auto-Generated Megafunction           ; C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/add_sub_dui.tdf     ;         ;
 +----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 127            ;
-;                                             ;                ;
-; Total combinational functions               ; 107            ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 44             ;
-;     -- 3 input functions                    ; 44             ;
-;     -- <=2 input functions                  ; 19             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 86             ;
-;     -- arithmetic mode                      ; 21             ;
-;                                             ;                ;
-; Total registers                             ; 44             ;
-;     -- Dedicated logic registers            ; 44             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 10             ;
-; Total memory bits                           ; 128            ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; clock_in~input ;
-; Maximum fan-out                             ; 45             ;
-; Total fan-out                               ; 588            ;
-; Average fan-out                             ; 3.28           ;
-+---------------------------------------------+----------------+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                              ;
++---------------------------------------------+----------------------------+
+; Resource                                    ; Usage                      ;
++---------------------------------------------+----------------------------+
+; Estimated Total logic elements              ; 137                        ;
+;                                             ;                            ;
+; Total combinational functions               ; 114                        ;
+; Logic element usage by number of LUT inputs ;                            ;
+;     -- 4 input functions                    ; 51                         ;
+;     -- 3 input functions                    ; 24                         ;
+;     -- <=2 input functions                  ; 39                         ;
+;                                             ;                            ;
+; Logic elements by mode                      ;                            ;
+;     -- normal mode                          ; 81                         ;
+;     -- arithmetic mode                      ; 33                         ;
+;                                             ;                            ;
+; Total registers                             ; 64                         ;
+;     -- Dedicated logic registers            ; 64                         ;
+;     -- I/O registers                        ; 0                          ;
+;                                             ;                            ;
+; I/O pins                                    ; 10                         ;
+; Total memory bits                           ; 128                        ;
+;                                             ;                            ;
+; Embedded Multiplier 9-bit elements          ; 0                          ;
+;                                             ;                            ;
+; Maximum fan-out node                        ; clockdiv:clocker|ctval[18] ;
+; Maximum fan-out                             ; 47                         ;
+; Total fan-out                               ; 634                        ;
+; Average fan-out                             ; 3.08                       ;
++---------------------------------------------+----------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -241,18 +252,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |eatercpu                                    ; 107 (68)            ; 44 (0)                    ; 128         ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu                                                                                            ; eatercpu        ; work         ;
-;    |alu:logic_unit|                          ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit                                                                             ; alu             ; work         ;
-;    |microcounter:mc|                         ; 8 (8)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|microcounter:mc                                                                            ; microcounter    ; work         ;
-;    |pc:program_counter|                      ; 10 (10)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|pc:program_counter                                                                         ; pc              ; work         ;
+; |eatercpu                                    ; 114 (58)            ; 64 (0)                    ; 128         ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu                                                                                            ; eatercpu        ; work         ;
+;    |alu:logic_unit|                          ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit                                                                             ; alu             ; work         ;
+;       |lpm_add_sub:Add1|                     ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1                                                            ; lpm_add_sub     ; work         ;
+;          |add_sub_dui:auto_generated|        ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1|add_sub_dui:auto_generated                                 ; add_sub_dui     ; work         ;
+;    |clockdiv:clocker|                        ; 19 (19)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|clockdiv:clocker                                                                           ; clockdiv        ; work         ;
+;    |flagsreg:flags_register|                 ; 4 (4)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|flagsreg:flags_register                                                                    ; flagsreg        ; work         ;
+;    |microcounter:mc|                         ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|microcounter:mc                                                                            ; microcounter    ; work         ;
+;    |outreg:output_register|                  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|outreg:output_register                                                                     ; outreg          ; work         ;
+;    |pc:program_counter|                      ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|pc:program_counter                                                                         ; pc              ; work         ;
 ;    |progmem:memory|                          ; 1 (1)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory                                                                             ; progmem         ; work         ;
 ;       |ramip:memory|                         ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory                                                                ; ramip           ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_59s3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated ; altsyncram_59s3 ; work         ;
 ;    |reg:a_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:a_register                                                                             ; reg             ; work         ;
 ;    |reg:b_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:b_register                                                                             ; reg             ; work         ;
-;    |reg:instruction_register|                ; 4 (4)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:instruction_register                                                                   ; reg             ; work         ;
-;    |reg:output_register|                     ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:output_register                                                                        ; reg             ; work         ;
+;    |reg:instruction_register|                ; 1 (1)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:instruction_register                                                                   ; reg             ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -275,17 +290,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
 
 
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; clockdiv:clocker|ctval[19,20]         ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 44    ;
+; Total registers                              ; 64    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 44    ;
+; Number of registers using Asynchronous Clear ; 45    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Clock Enable       ; 39    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -295,9 +320,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[0] ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |eatercpu|Mux7                         ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |eatercpu|data_bus[4]                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[7] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[1] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |eatercpu|Mux6                         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |eatercpu|data_bus[0]                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -371,6 +397,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu:logic_unit|lpm_add_sub:Add1 ;
++------------------------+--------------+------------------------------------------+
+; Parameter Name         ; Value        ; Type                                     ;
++------------------------+--------------+------------------------------------------+
+; LPM_WIDTH              ; 9            ; Untyped                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                  ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                  ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                  ;
+; LPM_PIPELINE           ; 0            ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                  ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                  ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                  ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                  ;
+; USE_WYS                ; OFF          ; Untyped                                  ;
+; STYLE                  ; FAST         ; Untyped                                  ;
+; CBXI_PARAMETER         ; add_sub_dui  ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                           ;
++------------------------+--------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                        ;
 +-------------------------------------------+-------------------------------------------------------------+
@@ -397,7 +451,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port  ; Type   ; Severity ; Details                                                                             ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 ; cfout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; zfout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -419,15 +472,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+------------------+
 
 
-+-------------------------------------------------+
-; Port Connectivity Checks: "reg:output_register" ;
-+------+-------+----------+-----------------------+
-; Port ; Type  ; Severity ; Details               ;
-+------+-------+----------+-----------------------+
-; oute ; Input ; Info     ; Stuck at GND          ;
-+------+-------+----------+-----------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "reg:instruction_register"                                                                  ;
 +-------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -447,13 +491,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "pc:program_counter"                                                                    ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; val_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pc:program_counter"                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; val_out      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; val_in[7..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -462,23 +507,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 44                          ;
-;     CLR               ; 8                           ;
-;     ENA CLR           ; 28                          ;
+; cycloneiii_ff         ; 64                          ;
+;     CLR               ; 6                           ;
+;     ENA CLR           ; 31                          ;
 ;     ENA CLR SLD       ; 8                           ;
-; cycloneiii_lcell_comb ; 107                         ;
-;     arith             ; 21                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 14                          ;
-;     normal            ; 86                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 44                          ;
+;     plain             ; 19                          ;
+; cycloneiii_lcell_comb ; 114                         ;
+;     arith             ; 33                          ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 9                           ;
+;     normal            ; 81                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 51                          ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.91                        ;
+; Max LUT depth         ; 6.60                        ;
+; Average LUT depth     ; 3.71                        ;
 +-----------------------+-----------------------------+
 
 
@@ -497,7 +544,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed May  1 01:12:37 2024
+    Info: Processing started: Fri May  3 21:20:57 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off embedsystems -c embedsystems
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -532,7 +579,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file testben
     Info (12022): Found design unit 1: microcountertest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd Line: 9
     Info (12023): Found entity 1: microcountertest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file hdl/microcounter.vhd
-    Info (12022): Found design unit 1: microcounter-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 14
+    Info (12022): Found design unit 1: microcounter-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 12
     Info (12023): Found entity 1: microcounter File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/microcounter.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file testbenches/modulestest.vhd
     Info (12022): Found design unit 1: modulestest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/modulestest.vhd Line: 9
@@ -555,11 +602,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file hdl/eat
 Info (12021): Found 2 design units, including 1 entities, in source file testbenches/eatercputest.vhd
     Info (12022): Found design unit 1: eatercputest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/eatercputest.vhd Line: 9
     Info (12023): Found entity 1: eatercputest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/eatercputest.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/outtest.vhd
+    Info (12022): Found design unit 1: outtest-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outtest.vhd Line: 13
+    Info (12023): Found entity 1: outtest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outtest.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/outtestwrapper.vhd
+    Info (12022): Found design unit 1: outtestwrapper-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outtestwrapper.vhd Line: 13
+    Info (12023): Found entity 1: outtestwrapper File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outtestwrapper.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/outreg.vhd
+    Info (12022): Found design unit 1: outreg-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outreg.vhd Line: 13
+    Info (12023): Found entity 1: outreg File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outreg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file hdl/clockdiv.vhd
+    Info (12022): Found design unit 1: clockdiv-description File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/clockdiv.vhd Line: 11
+    Info (12023): Found entity 1: clockdiv File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/clockdiv.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file testbenches/clockdivtest.vhd
+    Info (12022): Found design unit 1: clockdivtest-tb File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/clockdivtest.vhd Line: 9
+    Info (12023): Found entity 1: clockdivtest File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/clockdivtest.vhd Line: 5
 Info (12127): Elaborating entity "eatercpu" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(122): object "zflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 122
-Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(123): object "cflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 123
-Info (12128): Elaborating entity "pc" for hierarchy "pc:program_counter" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 143
-Info (12128): Elaborating entity "progmem" for hierarchy "progmem:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 144
+Warning (10036): Verilog HDL or VHDL warning at eatercpu.vhd(134): object "cflag_out" assigned a value but never read File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 134
+Info (12128): Elaborating entity "pc" for hierarchy "pc:program_counter" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 152
+Info (12128): Elaborating entity "progmem" for hierarchy "progmem:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 153
 Info (12128): Elaborating entity "ramip" for hierarchy "progmem:memory|ramip:memory" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd Line: 36
 Info (12128): Elaborating entity "altsyncram" for hierarchy "progmem:memory|ramip:memory|altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
 Info (12130): Elaborated megafunction instantiation "progmem:memory|ramip:memory|altsyncram:altsyncram_component" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd Line: 62
@@ -617,41 +678,57 @@ Info (12133): Instantiated megafunction "progmem:memory|ramip:memory|altsyncram:
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_59s3.tdf
     Info (12023): Found entity 1: altsyncram_59s3 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_59s3" for hierarchy "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "reg" for hierarchy "reg:instruction_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 145
-Info (12128): Elaborating entity "alu" for hierarchy "alu:logic_unit" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 149
-Info (12128): Elaborating entity "flagsreg" for hierarchy "flagsreg:flags_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 150
-Info (12128): Elaborating entity "microcounter" for hierarchy "microcounter:mc" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 151
+Info (12128): Elaborating entity "reg" for hierarchy "reg:instruction_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 154
+Info (12128): Elaborating entity "alu" for hierarchy "alu:logic_unit" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 157
+Info (12128): Elaborating entity "flagsreg" for hierarchy "flagsreg:flags_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 158
+Info (12128): Elaborating entity "microcounter" for hierarchy "microcounter:mc" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 159
+Info (12128): Elaborating entity "outreg" for hierarchy "outreg:output_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 160
+Info (12128): Elaborating entity "clockdiv" for hierarchy "clockdiv:clocker" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 161
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer Mux57 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 171
-    Warning (19017): Found clock multiplexer Mux49 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 239
-    Warning (19017): Found clock multiplexer Mux39 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 224
-    Warning (19017): Found clock multiplexer Mux32 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 215
-    Warning (19017): Found clock multiplexer Mux23 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 205
-    Warning (19017): Found clock multiplexer Mux15 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 194
-    Warning (19017): Found clock multiplexer Mux7 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 183
-    Warning (19017): Found clock multiplexer Mux1 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 174
+    Warning (19017): Found clock multiplexer Mux61 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 178
+    Warning (19017): Found clock multiplexer Mux54 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 255
+    Warning (19017): Found clock multiplexer mald~0 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 118
+    Warning (19017): Found clock multiplexer Mux43 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 237
+    Warning (19017): Found clock multiplexer Mux49 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 244
+    Warning (19017): Found clock multiplexer Mux34 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 226
+    Warning (19017): Found clock multiplexer Mux28 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 218
+    Warning (19017): Found clock multiplexer Mux20 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 209
+    Warning (19017): Found clock multiplexer Mux13 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 199
+    Warning (19017): Found clock multiplexer Mux6 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 189
+    Warning (19017): Found clock multiplexer Mux1 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 181
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "data_bus[7]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
-    Warning (13048): Converted tri-state node "data_bus[6]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
-    Warning (13048): Converted tri-state node "data_bus[5]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
-    Warning (13048): Converted tri-state node "data_bus[4]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+    Warning (13048): Converted tri-state node "data_bus[7]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
+    Warning (13048): Converted tri-state node "data_bus[6]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
+    Warning (13048): Converted tri-state node "data_bus[5]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
+    Warning (13048): Converted tri-state node "data_bus[4]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
     Warning (13048): Converted tri-state node "data_bus[3]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
     Warning (13048): Converted tri-state node "data_bus[2]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
     Warning (13048): Converted tri-state node "data_bus[1]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
     Warning (13048): Converted tri-state node "data_bus[0]" into a selector File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/pc.vhd Line: 19
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "alu:logic_unit|Add1" File: c:/intelfpga_lite/23.1std/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+Info (12130): Elaborated megafunction instantiation "alu:logic_unit|lpm_add_sub:Add1" File: c:/intelfpga_lite/23.1std/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+Info (12133): Instantiated megafunction "alu:logic_unit|lpm_add_sub:Add1" with the following parameter: File: c:/intelfpga_lite/23.1std/quartus/libraries/vhdl/synopsys/ieee/syn_arit.vhd Line: 836
+    Info (12134): Parameter "LPM_WIDTH" = "9"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dui.tdf
+    Info (12023): Found entity 1: add_sub_dui File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/add_sub_dui.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|ALTSYNCRAM" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 153 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 163 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 135 logic cells
+    Info (21061): Implemented 145 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Wed May  1 01:12:48 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4820 megabytes
+    Info: Processing ended: Fri May  3 21:21:09 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:25
 
 

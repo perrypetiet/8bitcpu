@@ -1,28 +1,21 @@
 |eatercpu
-clock_in => microcounter:mc.clk
-clock_in => pc:program_counter.clk
-clock_in => progmem:memory.clk
-clock_in => reg:instruction_register.clk
-clock_in => reg:output_register.clk
-clock_in => reg:a_register.clk
-clock_in => reg:b_register.clk
-clock_in => flagsreg:flags_register.clk
+clock_in => clockdiv:clocker.clk50in
 clear_in => pc:program_counter.clr
 clear_in => progmem:memory.clr
 clear_in => reg:instruction_register.clr
-clear_in => reg:output_register.clr
 clear_in => reg:a_register.clr
 clear_in => reg:b_register.clr
 clear_in => flagsreg:flags_register.clr
-clear_in => microcounter:mc.clr1
-cpu_out[0] <= reg:output_register.d_out[0]
-cpu_out[1] <= reg:output_register.d_out[1]
-cpu_out[2] <= reg:output_register.d_out[2]
-cpu_out[3] <= reg:output_register.d_out[3]
-cpu_out[4] <= reg:output_register.d_out[4]
-cpu_out[5] <= reg:output_register.d_out[5]
-cpu_out[6] <= reg:output_register.d_out[6]
-cpu_out[7] <= reg:output_register.d_out[7]
+clear_in => microcounter:mc.clr_global
+clear_in => outreg:output_register.clr
+cpu_out[0] << outreg:output_register.d_out[0]
+cpu_out[1] << outreg:output_register.d_out[1]
+cpu_out[2] << outreg:output_register.d_out[2]
+cpu_out[3] << outreg:output_register.d_out[3]
+cpu_out[4] << outreg:output_register.d_out[4]
+cpu_out[5] << outreg:output_register.d_out[5]
+cpu_out[6] << outreg:output_register.d_out[6]
+cpu_out[7] << outreg:output_register.d_out[7]
 
 
 |eatercpu|pc:program_counter
@@ -367,65 +360,6 @@ d_in[6] => regval[6].DATAIN
 d_in[7] => regval[7].DATAIN
 
 
-|eatercpu|reg:output_register
-ld => regval[7].ENA
-ld => regval[6].ENA
-ld => regval[5].ENA
-ld => regval[4].ENA
-ld => regval[3].ENA
-ld => regval[2].ENA
-ld => regval[1].ENA
-ld => regval[0].ENA
-clk => regval[0].CLK
-clk => regval[1].CLK
-clk => regval[2].CLK
-clk => regval[3].CLK
-clk => regval[4].CLK
-clk => regval[5].CLK
-clk => regval[6].CLK
-clk => regval[7].CLK
-clr => regval[0].ACLR
-clr => regval[1].ACLR
-clr => regval[2].ACLR
-clr => regval[3].ACLR
-clr => regval[4].ACLR
-clr => regval[5].ACLR
-clr => regval[6].ACLR
-clr => regval[7].ACLR
-oute => bus_out[0].OE
-oute => bus_out[1].OE
-oute => bus_out[2].OE
-oute => bus_out[3].OE
-oute => bus_out[4].OE
-oute => bus_out[5].OE
-oute => bus_out[6].OE
-oute => bus_out[7].OE
-d_out[0] <= regval[0].DB_MAX_OUTPUT_PORT_TYPE
-d_out[1] <= regval[1].DB_MAX_OUTPUT_PORT_TYPE
-d_out[2] <= regval[2].DB_MAX_OUTPUT_PORT_TYPE
-d_out[3] <= regval[3].DB_MAX_OUTPUT_PORT_TYPE
-d_out[4] <= regval[4].DB_MAX_OUTPUT_PORT_TYPE
-d_out[5] <= regval[5].DB_MAX_OUTPUT_PORT_TYPE
-d_out[6] <= regval[6].DB_MAX_OUTPUT_PORT_TYPE
-d_out[7] <= regval[7].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[0] <= bus_out[0].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[1] <= bus_out[1].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[2] <= bus_out[2].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[3] <= bus_out[3].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[4] <= bus_out[4].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[5] <= bus_out[5].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[6] <= bus_out[6].DB_MAX_OUTPUT_PORT_TYPE
-bus_out[7] <= bus_out[7].DB_MAX_OUTPUT_PORT_TYPE
-d_in[0] => regval[0].DATAIN
-d_in[1] => regval[1].DATAIN
-d_in[2] => regval[2].DATAIN
-d_in[3] => regval[3].DATAIN
-d_in[4] => regval[4].DATAIN
-d_in[5] => regval[5].DATAIN
-d_in[6] => regval[6].DATAIN
-d_in[7] => regval[7].DATAIN
-
-
 |eatercpu|reg:a_register
 ld => regval[7].ENA
 ld => regval[6].ENA
@@ -628,15 +562,85 @@ zfout <= zero.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |eatercpu|microcounter:mc
-clk => counter_val[0].CLK
-clk => counter_val[1].CLK
-clk => counter_val[2].CLK
-clk => counter_val[3].CLK
-clr1 => counter_val[3].IN0
-clr2 => counter_val[3].IN1
+clk_cnt => counter_val[0].CLK
+clk_cnt => counter_val[1].CLK
+clk_cnt => counter_val[2].CLK
+clk_cnt => counter_val[3].CLK
+clr_global => counter_val[0].ACLR
+clr_global => counter_val[1].ACLR
+clr_global => counter_val[2].ACLR
+clr_global => counter_val[3].ACLR
 output[0] <= counter_val[0].DB_MAX_OUTPUT_PORT_TYPE
 output[1] <= counter_val[1].DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= counter_val[2].DB_MAX_OUTPUT_PORT_TYPE
 output[3] <= counter_val[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eatercpu|outreg:output_register
+ld => regval[7].ENA
+ld => regval[6].ENA
+ld => regval[5].ENA
+ld => regval[4].ENA
+ld => regval[3].ENA
+ld => regval[2].ENA
+ld => regval[1].ENA
+ld => regval[0].ENA
+clk => regval[0].CLK
+clk => regval[1].CLK
+clk => regval[2].CLK
+clk => regval[3].CLK
+clk => regval[4].CLK
+clk => regval[5].CLK
+clk => regval[6].CLK
+clk => regval[7].CLK
+clr => regval[0].ACLR
+clr => regval[1].ACLR
+clr => regval[2].ACLR
+clr => regval[3].ACLR
+clr => regval[4].ACLR
+clr => regval[5].ACLR
+clr => regval[6].ACLR
+clr => regval[7].ACLR
+d_in[0] => regval[0].DATAIN
+d_in[1] => regval[1].DATAIN
+d_in[2] => regval[2].DATAIN
+d_in[3] => regval[3].DATAIN
+d_in[4] => regval[4].DATAIN
+d_in[5] => regval[5].DATAIN
+d_in[6] => regval[6].DATAIN
+d_in[7] => regval[7].DATAIN
+d_out[0] <= regval[0].DB_MAX_OUTPUT_PORT_TYPE
+d_out[1] <= regval[1].DB_MAX_OUTPUT_PORT_TYPE
+d_out[2] <= regval[2].DB_MAX_OUTPUT_PORT_TYPE
+d_out[3] <= regval[3].DB_MAX_OUTPUT_PORT_TYPE
+d_out[4] <= regval[4].DB_MAX_OUTPUT_PORT_TYPE
+d_out[5] <= regval[5].DB_MAX_OUTPUT_PORT_TYPE
+d_out[6] <= regval[6].DB_MAX_OUTPUT_PORT_TYPE
+d_out[7] <= regval[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eatercpu|clockdiv:clocker
+clk50in => ctval[0].CLK
+clk50in => ctval[1].CLK
+clk50in => ctval[2].CLK
+clk50in => ctval[3].CLK
+clk50in => ctval[4].CLK
+clk50in => ctval[5].CLK
+clk50in => ctval[6].CLK
+clk50in => ctval[7].CLK
+clk50in => ctval[8].CLK
+clk50in => ctval[9].CLK
+clk50in => ctval[10].CLK
+clk50in => ctval[11].CLK
+clk50in => ctval[12].CLK
+clk50in => ctval[13].CLK
+clk50in => ctval[14].CLK
+clk50in => ctval[15].CLK
+clk50in => ctval[16].CLK
+clk50in => ctval[17].CLK
+clk50in => ctval[18].CLK
+clk50in => ctval[19].CLK
+clk50in => ctval[20].CLK
+clkdivout <= ctval[18].DB_MAX_OUTPUT_PORT_TYPE
 
 

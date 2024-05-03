@@ -36,11 +36,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock_in",
+					"name" : "clear_in",
 					"strict" : false
 				},
 				{
-					"name" : "clear_in",
+					"name" : "clock_in",
 					"strict" : false
 				}
 			]

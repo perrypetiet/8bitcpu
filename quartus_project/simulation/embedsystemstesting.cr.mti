@@ -15,6 +15,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity pc
 -- Compiling architecture description of pc
 
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outreg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/outreg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity outreg
+-- Compiling architecture description of outreg
+
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/regtest.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -22,6 +30,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Compiling entity regtest
 -- Compiling architecture tb of regtest
+
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/clockdivtest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/clockdivtest.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity clockdivtest
+-- Compiling architecture tb of clockdivtest
 
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/progmemtest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/progmemtest.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -47,6 +63,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity ramiptest
 -- Compiling architecture tb of ramiptest
 
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity microcountertest
+-- Compiling architecture tb of microcountertest
+
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/alu.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/alu.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -57,14 +81,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity alu
 -- Compiling architecture description of alu
-
-} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/microcountertest.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity microcountertest
--- Compiling architecture tb of microcountertest
 
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/flagsregtest.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/testbenches/flagsregtest.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -90,6 +106,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity reg
 -- Compiling architecture description of reg
 
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/clockdiv.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/clockdiv.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity clockdiv
+-- Compiling architecture description of clockdiv
+
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/progmem.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -98,6 +123,14 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity progmem
 -- Compiling architecture description of progmem
+
+} {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity eatercpu
+-- Compiling architecture description of eatercpu
 
 } {} {}} C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/ramip.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
