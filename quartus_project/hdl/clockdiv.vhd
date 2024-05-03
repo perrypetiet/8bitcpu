@@ -21,6 +21,6 @@ begin
 	 end if;
   end process;
    	
-  clkdivout <= ctval(18);
+  clkdivout <= ctval(16);
   
 end description;

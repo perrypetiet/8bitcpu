@@ -641,6 +641,6 @@ clk50in => ctval[17].CLK
 clk50in => ctval[18].CLK
 clk50in => ctval[19].CLK
 clk50in => ctval[20].CLK
-clkdivout <= ctval[18].DB_MAX_OUTPUT_PORT_TYPE
+clkdivout <= ctval[16].DB_MAX_OUTPUT_PORT_TYPE
 
 
