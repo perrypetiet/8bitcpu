@@ -32,7 +32,6 @@ signal alubusout: std_logic_vector(7 downto 0);
 
 begin
 
-	-- Connect two registers together
 	DUT: alu port map(aluoutput, alusub, cf, zf, ain, bin, aluval, alubusout);
  
 	process
@@ -47,8 +46,6 @@ begin
 	alusub <= '1';
 	wait;
 	end process;	 
-    
-    --assert(q_out='0') report "Fail 0/0" severity error;
-    --assert false report "Test done." severity note;
+   
    
 end tb;

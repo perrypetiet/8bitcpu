@@ -47,7 +47,7 @@ begin
     wait for 1 ns;
     clock <= '0';
     wait for 1 ns;
-    reset <= '1';
+    --reset <= '1';
     reg1out  <= '1';
     loadreg2 <= '1';
     wait for 1 ns;
@@ -57,7 +57,7 @@ begin
     loadreg2 <= '0';
     wait for 1 ns;
     clock <= '0';
-    reset <= '1';
+    --reset <= '1';
     wait for 1 ns;
     reset <= '0';
     wait for 1 ns;

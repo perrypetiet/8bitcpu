@@ -248,8 +248,7 @@ begin
 				  when others => null;
 				end case;
 		  when others => null;
-		  end case;
-		
+		  end case;		
 		  
 		  when "0111" => -- orlda 
 		  case mcout is
@@ -257,6 +256,17 @@ begin
 			 when "0001" => ramo <= '1'; irld <= '1';
 			 when "0010" => pcc <= '1';
 			 when "0011" => oea <= '1'; orld <= '1';
+			 when others => null;
+		  end case;
+		  
+		  when "1000" => -- ramlda 
+		  case mcout is
+		    when "0000" => pco <= '1'; mald <= '1';
+			 when "0001" => ramo <= '1'; irld <= '1';
+			 when "0010" => pcc <= '1';
+			 when "0011" => iro <= '1'; mald <= '1';
+			 when "0100" => oea <= '1'; ramw <= '1'; 
+			 --when "0101" => 
 			 when others => null;
 		  end case;
 		  

@@ -44,6 +44,7 @@ ENTITY ramip IS
 	PORT
 	(
 		address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+		addressstall_a		: IN STD_LOGIC  := '0';
 		clock		: IN STD_LOGIC  := '1';
 		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		wren		: IN STD_LOGIC ;
@@ -64,7 +65,6 @@ BEGIN
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
 		init_file => "../meminit.hex",
-		--init_file => "meminit.hex",
 		intended_device_family => "Cyclone IV E",
 		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type => "altsyncram",
@@ -80,6 +80,7 @@ BEGIN
 	)
 	PORT MAP (
 		address_a => address,
+		addressstall_a => addressstall_a,
 		clock0 => clock,
 		data_a => data,
 		wren_a => wren,
@@ -93,7 +94,7 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: ADDRESSSTALL_A NUMERIC "0"
+-- Retrieval info: PRIVATE: ADDRESSSTALL_A NUMERIC "1"
 -- Retrieval info: PRIVATE: AclrAddr NUMERIC "0"
 -- Retrieval info: PRIVATE: AclrByte NUMERIC "0"
 -- Retrieval info: PRIVATE: AclrData NUMERIC "0"
@@ -143,11 +144,13 @@ END SYN;
 -- Retrieval info: CONSTANT: WIDTH_A NUMERIC "8"
 -- Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 -- Retrieval info: USED_PORT: address 0 0 8 0 INPUT NODEFVAL "address[7..0]"
+-- Retrieval info: USED_PORT: addressstall_a 0 0 0 0 INPUT GND "addressstall_a"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 -- Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
 -- Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 -- Retrieval info: USED_PORT: wren 0 0 0 0 INPUT NODEFVAL "wren"
 -- Retrieval info: CONNECT: @address_a 0 0 8 0 address 0 0 8 0
+-- Retrieval info: CONNECT: @addressstall_a 0 0 0 0 addressstall_a 0 0 0 0
 -- Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: @data_a 0 0 8 0 data 0 0 8 0
 -- Retrieval info: CONNECT: @wren_a 0 0 0 0 wren 0 0 0 0

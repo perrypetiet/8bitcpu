@@ -1,5 +1,5 @@
 Analysis & Synthesis report for embedsystems
-Fri May  3 21:24:37 2024
+Mon May 27 21:03:20 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -16,21 +16,22 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated
- 14. Parameter Settings for User Entity Instance: progmem:memory|ramip:memory|altsyncram:altsyncram_component
- 15. Parameter Settings for Inferred Entity Instance: alu:logic_unit|lpm_add_sub:Add1
- 16. altsyncram Parameter Settings by Entity Instance
- 17. Port Connectivity Checks: "flagsreg:flags_register"
- 18. Port Connectivity Checks: "alu:logic_unit"
- 19. Port Connectivity Checks: "reg:b_register"
- 20. Port Connectivity Checks: "reg:instruction_register"
- 21. Port Connectivity Checks: "progmem:memory"
- 22. Port Connectivity Checks: "pc:program_counter"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated
+ 15. Parameter Settings for User Entity Instance: progmem:memory|ramip:memory|altsyncram:altsyncram_component
+ 16. Parameter Settings for Inferred Entity Instance: alu:logic_unit|lpm_add_sub:Add1
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "flagsreg:flags_register"
+ 19. Port Connectivity Checks: "alu:logic_unit"
+ 20. Port Connectivity Checks: "reg:b_register"
+ 21. Port Connectivity Checks: "reg:instruction_register"
+ 22. Port Connectivity Checks: "progmem:memory"
+ 23. Port Connectivity Checks: "pc:program_counter"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -57,15 +58,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May  3 21:24:37 2024          ;
+; Analysis & Synthesis Status        ; Successful - Mon May 27 21:03:20 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; embedsystems                                   ;
 ; Top-level Entity Name              ; eatercpu                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 135                                            ;
-;     Total combinational functions  ; 112                                            ;
-;     Dedicated logic registers      ; 62                                             ;
-; Total registers                    ; 62                                             ;
+; Total logic elements               ; 126                                            ;
+;     Total combinational functions  ; 106                                            ;
+;     Dedicated logic registers      ; 46                                             ;
+; Total registers                    ; 46                                             ;
 ; Total pins                         ; 10                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 128                                            ;
@@ -213,37 +214,37 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+---------------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                              ;
-+---------------------------------------------+----------------------------+
-; Resource                                    ; Usage                      ;
-+---------------------------------------------+----------------------------+
-; Estimated Total logic elements              ; 135                        ;
-;                                             ;                            ;
-; Total combinational functions               ; 112                        ;
-; Logic element usage by number of LUT inputs ;                            ;
-;     -- 4 input functions                    ; 51                         ;
-;     -- 3 input functions                    ; 24                         ;
-;     -- <=2 input functions                  ; 37                         ;
-;                                             ;                            ;
-; Logic elements by mode                      ;                            ;
-;     -- normal mode                          ; 81                         ;
-;     -- arithmetic mode                      ; 31                         ;
-;                                             ;                            ;
-; Total registers                             ; 62                         ;
-;     -- Dedicated logic registers            ; 62                         ;
-;     -- I/O registers                        ; 0                          ;
-;                                             ;                            ;
-; I/O pins                                    ; 10                         ;
-; Total memory bits                           ; 128                        ;
-;                                             ;                            ;
-; Embedded Multiplier 9-bit elements          ; 0                          ;
-;                                             ;                            ;
-; Maximum fan-out node                        ; clockdiv:clocker|ctval[16] ;
-; Maximum fan-out                             ; 47                         ;
-; Total fan-out                               ; 626                        ;
-; Average fan-out                             ; 3.10                       ;
-+---------------------------------------------+----------------------------+
++-------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                             ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Estimated Total logic elements              ; 126                       ;
+;                                             ;                           ;
+; Total combinational functions               ; 106                       ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 52                        ;
+;     -- 3 input functions                    ; 25                        ;
+;     -- <=2 input functions                  ; 29                        ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 90                        ;
+;     -- arithmetic mode                      ; 16                        ;
+;                                             ;                           ;
+; Total registers                             ; 46                        ;
+;     -- Dedicated logic registers            ; 46                        ;
+;     -- I/O registers                        ; 0                         ;
+;                                             ;                           ;
+; I/O pins                                    ; 10                        ;
+; Total memory bits                           ; 128                       ;
+;                                             ;                           ;
+; Embedded Multiplier 9-bit elements          ; 0                         ;
+;                                             ;                           ;
+; Maximum fan-out node                        ; clockdiv:clocker|ctval[0] ;
+; Maximum fan-out                             ; 47                        ;
+; Total fan-out                               ; 591                       ;
+; Average fan-out                             ; 3.28                      ;
++---------------------------------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -251,22 +252,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |eatercpu                                    ; 112 (58)            ; 62 (0)                    ; 128         ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu                                                                                            ; eatercpu        ; work         ;
-;    |alu:logic_unit|                          ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit                                                                             ; alu             ; work         ;
-;       |lpm_add_sub:Add1|                     ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1                                                            ; lpm_add_sub     ; work         ;
-;          |add_sub_dui:auto_generated|        ; 18 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1|add_sub_dui:auto_generated                                 ; add_sub_dui     ; work         ;
-;    |clockdiv:clocker|                        ; 17 (17)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|clockdiv:clocker                                                                           ; clockdiv        ; work         ;
+; |eatercpu                                    ; 106 (62)            ; 46 (0)                    ; 128         ; 0            ; 0       ; 0         ; 10   ; 0            ; |eatercpu                                                                                            ; eatercpu        ; work         ;
+;    |alu:logic_unit|                          ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit                                                                             ; alu             ; work         ;
+;       |lpm_add_sub:Add1|                     ; 19 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1                                                            ; lpm_add_sub     ; work         ;
+;          |add_sub_dui:auto_generated|        ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|alu:logic_unit|lpm_add_sub:Add1|add_sub_dui:auto_generated                                 ; add_sub_dui     ; work         ;
+;    |clockdiv:clocker|                        ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|clockdiv:clocker                                                                           ; clockdiv        ; work         ;
 ;    |flagsreg:flags_register|                 ; 4 (4)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|flagsreg:flags_register                                                                    ; flagsreg        ; work         ;
 ;    |microcounter:mc|                         ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|microcounter:mc                                                                            ; microcounter    ; work         ;
 ;    |outreg:output_register|                  ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|outreg:output_register                                                                     ; outreg          ; work         ;
-;    |pc:program_counter|                      ; 9 (9)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|pc:program_counter                                                                         ; pc              ; work         ;
+;    |pc:program_counter|                      ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|pc:program_counter                                                                         ; pc              ; work         ;
 ;    |progmem:memory|                          ; 1 (1)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory                                                                             ; progmem         ; work         ;
 ;       |ramip:memory|                         ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory                                                                ; ramip           ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;             |altsyncram_59s3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated ; altsyncram_59s3 ; work         ;
 ;    |reg:a_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:a_register                                                                             ; reg             ; work         ;
 ;    |reg:b_register|                          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:b_register                                                                             ; reg             ; work         ;
-;    |reg:instruction_register|                ; 1 (1)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:instruction_register                                                                   ; reg             ; work         ;
+;    |reg:instruction_register|                ; 4 (4)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |eatercpu|reg:instruction_register                                                                   ; reg             ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -289,14 +290,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; clockdiv:clocker|ctval[17..20]        ; Lost fanout        ;
-; Total Number of Removed Registers = 4 ;                    ;
-+---------------------------------------+--------------------+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; clockdiv:clocker|ctval[1..20]          ; Lost fanout        ;
+; Total Number of Removed Registers = 20 ;                    ;
++----------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++---------------------------+--------------------+----------------------------------------------------------------------------------+
+; Register name             ; Reason for Removal ; Registers Removed due to This Register                                           ;
++---------------------------+--------------------+----------------------------------------------------------------------------------+
+; clockdiv:clocker|ctval[1] ; Lost Fanouts       ; clockdiv:clocker|ctval[2], clockdiv:clocker|ctval[3], clockdiv:clocker|ctval[4], ;
+;                           ;                    ; clockdiv:clocker|ctval[5]                                                        ;
++---------------------------+--------------------+----------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -304,12 +315,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 62    ;
+; Total registers                              ; 46    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 45    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Clock Enable       ; 36    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -320,9 +331,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[7] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |eatercpu|pc:program_counter|pc_val[0] ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |eatercpu|Mux6                         ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |eatercpu|data_bus[0]                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |eatercpu|data_bus[4]                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -485,7 +496,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------+-------+----------+--------------+
 ; Port         ; Type  ; Severity ; Details      ;
 +--------------+-------+----------+--------------+
-; memwrite     ; Input ; Info     ; Stuck at GND ;
 ; addrin[7..4] ; Input ; Info     ; Stuck at GND ;
 +--------------+-------+----------+--------------+
 
@@ -506,25 +516,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 10                          ;
-; cycloneiii_ff         ; 62                          ;
-;     CLR               ; 6                           ;
-;     ENA CLR           ; 31                          ;
+; cycloneiii_ff         ; 46                          ;
+;     CLR               ; 9                           ;
+;     ENA CLR           ; 28                          ;
 ;     ENA CLR SLD       ; 8                           ;
-;     plain             ; 17                          ;
-; cycloneiii_lcell_comb ; 112                         ;
-;     arith             ; 31                          ;
-;         2 data inputs ; 22                          ;
-;         3 data inputs ; 9                           ;
-;     normal            ; 81                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 106                         ;
+;     arith             ; 16                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 8                           ;
+;     normal            ; 90                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 51                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 52                          ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.60                        ;
-; Average LUT depth     ; 3.73                        ;
+; Max LUT depth         ; 7.60                        ;
+; Average LUT depth     ; 4.83                        ;
 +-----------------------+-----------------------------+
 
 
@@ -543,7 +553,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri May  3 21:24:25 2024
+    Info: Processing started: Mon May 27 21:03:08 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off embedsystems -c embedsystems
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -684,8 +694,9 @@ Info (12128): Elaborating entity "microcounter" for hierarchy "microcounter:mc" 
 Info (12128): Elaborating entity "outreg" for hierarchy "outreg:output_register" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 160
 Info (12128): Elaborating entity "clockdiv" for hierarchy "clockdiv:clocker" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 161
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer Mux61 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 178
-    Warning (19017): Found clock multiplexer Mux54 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 255
+    Warning (19017): Found clock multiplexer Mux69 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 178
+    Warning (19017): Found clock multiplexer Mux61 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 263
+    Warning (19017): Found clock multiplexer Mux54 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 254
     Warning (19017): Found clock multiplexer mald~0 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 118
     Warning (19017): Found clock multiplexer Mux43 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 237
     Warning (19017): Found clock multiplexer Mux49 File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/hdl/eatercpu.vhd Line: 244
@@ -715,19 +726,19 @@ Info (12133): Instantiated megafunction "alu:logic_unit|lpm_add_sub:Add1" with t
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_dui.tdf
     Info (12023): Found entity 1: add_sub_dui File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/add_sub_dui.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 20 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "progmem:memory|ramip:memory|altsyncram:altsyncram_component|altsyncram_59s3:auto_generated|ALTSYNCRAM" File: C:/Users/Perry/Documents/GitHub/Embedded-systems-final-assignment/quartus_project/db/altsyncram_59s3.tdf Line: 33
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 161 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 143 logic cells
+    Info (21061): Implemented 134 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4806 megabytes
-    Info: Processing ended: Fri May  3 21:24:37 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 4810 megabytes
+    Info: Processing ended: Mon May 27 21:03:20 2024
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:27
 
 

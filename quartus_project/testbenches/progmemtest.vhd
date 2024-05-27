@@ -26,8 +26,8 @@ signal ramo     : std_logic := '0';
 signal ramw     : std_logic := '0';
 signal mald     : std_logic := '0';
 signal businaddr: std_logic_vector(7 downto 0) := "00000000";
-signal businmem : std_logic_vector(7 downto 0) := "00000000";
-signal busout   : std_logic_vector(7 downto 0) := "00000000";
+signal businmem : std_logic_vector(7 downto 0) := "00100000";
+signal busout   : std_logic_vector(7 downto 0);
 
 
 begin
@@ -39,24 +39,26 @@ begin
     begin
 	 clock <= '1';
 	 wait for 1 ns;
-
-	 wait for 1 ns;
+	 --mald <= '1';
 	 ramo <= '1';
 	 clock <= '0';
-	 wait for 1 ns;
-	 businaddr <="00000001";
-	 mald <= '1';
+	 ramw <= '1';
 	 wait for 1 ns;
 	 clock <= '1';
-	 wait for 1 ns;
 	 mald <= '0';
+	 
+	 wait for 1 ns;
+	 clock <= '1';
 	 wait for 1 ns;
 	 clock <= '0';
 	 wait for 1 ns;
-	 businaddr <="00000000";
-	 mald <= '1';
+	 clock <= '1';
+	 wait for 1 ns;
+	 clock <= '0';
 	 wait for 1 ns;
 	 clock <= '1';
+	 wait for 1 ns;
+	 clock <= '0';
 	 
 	 wait;
     end process;	 

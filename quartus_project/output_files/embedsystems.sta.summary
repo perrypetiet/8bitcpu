@@ -2,76 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clockdiv:clocker|ctval[16]'
-Slack : -6.029
-TNS   : -185.772
+Type  : Slow 1200mV 85C Model Setup 'clockdiv:clocker|ctval[0]'
+Slack : -5.528
+TNS   : -181.820
 
 Type  : Slow 1200mV 85C Model Setup 'clock_in'
-Slack : -1.440
-TNS   : -13.356
+Slack : -0.359
+TNS   : -0.359
 
 Type  : Slow 1200mV 85C Model Hold 'clock_in'
-Slack : 0.361
+Slack : 0.265
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clockdiv:clocker|ctval[16]'
-Slack : 0.381
+Type  : Slow 1200mV 85C Model Hold 'clockdiv:clocker|ctval[0]'
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_in'
 Slack : -3.000
-TNS   : -20.000
+TNS   : -4.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clockdiv:clocker|ctval[16]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clockdiv:clocker|ctval[0]'
 Slack : -2.174
-TNS   : -49.348
+TNS   : -51.522
 
-Type  : Slow 1200mV 0C Model Setup 'clockdiv:clocker|ctval[16]'
-Slack : -5.314
-TNS   : -162.764
+Type  : Slow 1200mV 0C Model Setup 'clockdiv:clocker|ctval[0]'
+Slack : -4.826
+TNS   : -158.324
 
 Type  : Slow 1200mV 0C Model Setup 'clock_in'
-Slack : -1.165
-TNS   : -10.058
+Slack : -0.238
+TNS   : -0.238
 
 Type  : Slow 1200mV 0C Model Hold 'clock_in'
-Slack : 0.321
+Slack : 0.216
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clockdiv:clocker|ctval[16]'
-Slack : 0.333
+Type  : Slow 1200mV 0C Model Hold 'clockdiv:clocker|ctval[0]'
+Slack : 0.309
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_in'
 Slack : -3.000
-TNS   : -20.000
+TNS   : -4.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clockdiv:clocker|ctval[16]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clockdiv:clocker|ctval[0]'
 Slack : -2.174
-TNS   : -49.348
+TNS   : -51.522
 
-Type  : Fast 1200mV 0C Model Setup 'clockdiv:clocker|ctval[16]'
-Slack : -2.765
-TNS   : -77.409
+Type  : Fast 1200mV 0C Model Setup 'clockdiv:clocker|ctval[0]'
+Slack : -2.534
+TNS   : -76.261
 
 Type  : Fast 1200mV 0C Model Setup 'clock_in'
-Slack : -0.543
-TNS   : -1.192
+Slack : -0.011
+TNS   : -0.011
 
-Type  : Fast 1200mV 0C Model Hold 'clock_in'
-Slack : 0.193
+Type  : Fast 1200mV 0C Model Hold 'clockdiv:clocker|ctval[0]'
+Slack : 0.152
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clockdiv:clocker|ctval[16]'
-Slack : 0.199
+Type  : Fast 1200mV 0C Model Hold 'clock_in'
+Slack : 0.165
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_in'
 Slack : -3.000
-TNS   : -21.068
+TNS   : -4.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clockdiv:clocker|ctval[16]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clockdiv:clocker|ctval[0]'
 Slack : -1.000
-TNS   : -47.000
+TNS   : -48.000
 
 ------------------------------------------------------------

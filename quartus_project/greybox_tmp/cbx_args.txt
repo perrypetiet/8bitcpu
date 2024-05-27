@@ -13,5 +13,6 @@ WIDTH_A=8
 WIDTH_BYTEENA_A=1
 DEVICE_FAMILY="Cyclone IV E"
 address_a
+addressstall_a
 clock0
 q_a

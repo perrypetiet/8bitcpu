@@ -8,14 +8,14 @@ clear_in => reg:b_register.clr
 clear_in => flagsreg:flags_register.clr
 clear_in => microcounter:mc.clr_global
 clear_in => outreg:output_register.clr
-cpu_out[0] << outreg:output_register.d_out[0]
-cpu_out[1] << outreg:output_register.d_out[1]
-cpu_out[2] << outreg:output_register.d_out[2]
-cpu_out[3] << outreg:output_register.d_out[3]
-cpu_out[4] << outreg:output_register.d_out[4]
-cpu_out[5] << outreg:output_register.d_out[5]
-cpu_out[6] << outreg:output_register.d_out[6]
-cpu_out[7] << outreg:output_register.d_out[7]
+cpu_out[0] <= outreg:output_register.d_out[0]
+cpu_out[1] <= outreg:output_register.d_out[1]
+cpu_out[2] <= outreg:output_register.d_out[2]
+cpu_out[3] <= outreg:output_register.d_out[3]
+cpu_out[4] <= outreg:output_register.d_out[4]
+cpu_out[5] <= outreg:output_register.d_out[5]
+cpu_out[6] <= outreg:output_register.d_out[6]
+cpu_out[7] <= outreg:output_register.d_out[7]
 
 
 |eatercpu|pc:program_counter
@@ -641,6 +641,6 @@ clk50in => ctval[17].CLK
 clk50in => ctval[18].CLK
 clk50in => ctval[19].CLK
 clk50in => ctval[20].CLK
-clkdivout <= ctval[16].DB_MAX_OUTPUT_PORT_TYPE
+clkdivout <= ctval[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
