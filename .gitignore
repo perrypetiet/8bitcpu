@@ -2,10 +2,10 @@
 *.bak
 
 # Ignore simulation folder in quartus_project
-quartus_project/simulation/
+quartus_project/simulation
 
 # Ignore output_files folder in quartusproject
-quartusproject/output_files/
+quartusproject/output_files
 
-quartusproject/greybox_tmp/
-quartusproject/incremental_dp/
+quartusproject/greybox_tmp
+quartusproject/incremental_dp
